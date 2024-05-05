@@ -1,0 +1,1 @@
+{"alignment":"center","dashid":"123","data":"Click Here","hOffset":250,"name":"text1","onMouseUp":"sun1.opacity = (sun1.opacity / 100) * 90;","size":36,"style":"bold","vOffset":100}
