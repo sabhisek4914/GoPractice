@@ -5,6 +5,7 @@ import (
 	"math"
 )
 
+// 581 -> https://leetcode.com/problems/shortest-unsorted-continuous-subarray/description/
 // inp:={1,2,3,4,5,8,6,7,9,10,11}
 //		 0,1,2,3,4,5,6,7,8,9,10
 //op: [5,7] smallest subarray upon sorting sorts the entire array

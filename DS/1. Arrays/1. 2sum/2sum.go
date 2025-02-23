@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://leetcode.com/problems/two-sum/description/
 // {-1,0,1,2,3,5,6,8} k=8
 func printPairs(arr []int, sum int) {
 	mp := make(map[int]bool)

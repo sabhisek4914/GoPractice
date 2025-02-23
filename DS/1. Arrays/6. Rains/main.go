@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//42. https://leetcode.com/problems/trapping-rain-water/description/
 // inp:=[0,1,0,2,1,0,1,3,2,1,2,1]
 // l -> [0,1,1,2,2,2,2,3,3,3,3,3]
 // r -> [3,3,3,3,3,3,3,3,2,2,2,1]

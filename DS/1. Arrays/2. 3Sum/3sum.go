@@ -5,7 +5,11 @@ import (
 	"sort"
 )
 
+// https://leetcode.com/problems/3sum/description/
 //{12, 3, 4, 1, 6, 9}, sum = 24;
+// O(n^2) time
+// O(1) space
+
 func processThreeSum(arr []int, sum int) {
 	sort.Ints(arr)
 	fmt.Println("arr: ", arr)

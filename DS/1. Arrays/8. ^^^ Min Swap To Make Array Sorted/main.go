@@ -5,6 +5,8 @@ import (
 	"sort"
 )
 
+// https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/
+//2366 https://leetcode.com/problems/minimum-replacements-to-sort-the-array/description/ need to try
 // [10,11,5,4,3,2,1]
 // sorted [1,2,3,4,5,10,11]
 

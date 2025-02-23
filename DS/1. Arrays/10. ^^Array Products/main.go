@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// 238. https://leetcode.com/problems/product-of-array-except-self/description/
 // inp:{1,2,3,4,5}
 // op:{120,60,40,30,24}
 
