@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 /*
 Sorted Subsequences in loxographical order
@@ -10,10 +13,17 @@ op:= null,a,b,c,d,ab,ac,ad,bc,bd,cd,abc,abd,acd,bcd,abcd
 */
 
 func main() {
-	str := "abc"
+	str := "abcd"
 	var subsequences []string
 
 	generateSubsequences(str, "", &subsequences) // Pass slice as a pointer
+
+	sort.Slice(subsequences, func(i, j int) bool {
+		if len(subsequences[i]) == len(subsequences[j]) {
+			return subsequences[i] < subsequences[j]
+		}
+		return len(subsequences[i]) < len(subsequences[j])
+	})
 	fmt.Println("All Subsequences:", subsequences)
 }
 
