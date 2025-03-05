@@ -55,11 +55,12 @@ func minWindow(s, t string) string {
 				start++
 			}
 			length := i - start + 1
+			fmt.Println(cnt, start, i)
 			if length < small {
 				// fmt.Println(length, small, i, start)
 				small = length
 				str = s[start : i+1]
-				// fmt.Println(str)
+				fmt.Println(str, cnt, start)
 			}
 		}
 	}
