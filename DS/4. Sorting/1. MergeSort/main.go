@@ -11,7 +11,7 @@ Output: [0,2,,4,5,6,7,10]
 */
 
 func main() {
-	arr := []int{10, 5, 2, 0, 7, 6, 4}
+	arr := []int{0, 2, 3, 1}
 	mergeSort(arr, 0, len(arr)-1)
 	fmt.Println(arr)
 }
@@ -24,6 +24,7 @@ func mergeSort(arr []int, s, e int) {
 	mergeSort(arr, s, m)
 	mergeSort(arr, m+1, e)
 	merge(arr, s, e)
+	fmt.Println(arr)
 }
 
 func merge(arr []int, s, e int) {
@@ -51,7 +52,7 @@ func merge(arr []int, s, e int) {
 		temp = append(temp, arr[i])
 		i++
 	}
-	arr = temp
+	// arr = temp
 	// Copy sorted elements back to original array
-	// copy(arr[s:e+1], temp)
+	copy(arr[s:e+1], temp)
 }
