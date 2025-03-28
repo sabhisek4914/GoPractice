@@ -1,22 +1,63 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-func modifySlice(a []int) {
-	s := a
-	s[0] = 7
-	s = append(s, 100, 101, 102) // Creates a new slice, does not affect original
-	s[0] = 9
-	s[3] = 8
-	fmt.Println(s)
+func minDays(bloomDay []int, m int, k int) int {
+	if m*k > len(bloomDay) {
+		return -1
+	}
+	s, e := 1, max(bloomDay)
+	for s < e {
+		mid := s + (e-s)/2
+		if predicate(bloomDay, m, k, mid) {
+			e = mid
+		} else {
+			s = mid + 1
+		}
+	}
+	return s
+}
+
+func predicate(bloomDay []int, m, k, mid int) bool {
+	bouqe := 0
+	for i := 0; i < len(bloomDay); {
+		if bloomDay[i] >= mid {
+			cnt := 1
+			j := 1
+			for j <= k {
+				if bloomDay[i+j] >= mid {
+					cnt++
+					j++
+				} else {
+					break
+				}
+			}
+			if cnt == k {
+				bouqe++
+			}
+			i += j
+		}
+	}
+
+	return bouqe >= m
+}
+
+func max(arr []int) int {
+	large := math.MinInt32
+	for _, a := range arr {
+		if a > large {
+			large = a
+		}
+	}
+	return large
 }
 
 func main() {
-	nums := make([]int, 8, 10)
-	// nums = []int{1, 2, 3}
-	nums[0] = 1
-	nums[1] = 2
-	nums[3] = 3
-	modifySlice(nums)
-	fmt.Println(nums) // Output: [1 2 3] (No change!)
+	bloomDay := []int{1, 10, 3, 10, 2}
+	m := 3
+	k := 1
+	fmt.Println(minDays(bloomDay, m, k))
 }
