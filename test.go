@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"sort"
 )
 
 func minDays(bloomDay []int, m int, k int) int {
@@ -56,8 +57,17 @@ func max(arr []int) int {
 }
 
 func main() {
-	bloomDay := []int{1, 10, 3, 10, 2}
-	m := 3
-	k := 1
-	fmt.Println(minDays(bloomDay, m, k))
+	s := "aaabc"
+	freq := make([]int, 256)
+	for _, v := range s {
+		freq[v]++
+	}
+	sort.Slice(freq, func(i, j int) bool {
+		return freq[i] > freq[j]
+	})
+	fmt.Println(freq)
+	// bloomDay := []int{1, 10, 3, 10, 2}
+	// m := 3
+	// k := 1
+	// fmt.Println(minDays(bloomDay, m, k))
 }
